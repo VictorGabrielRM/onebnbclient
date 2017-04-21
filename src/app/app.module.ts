@@ -16,6 +16,7 @@ import { LoginComponent } from './users/login/login.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { UserEditComponent } from './users/user-edit/user-edit.component';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    UserEditComponent
+    UserEditComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
