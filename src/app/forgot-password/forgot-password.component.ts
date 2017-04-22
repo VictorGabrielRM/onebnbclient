@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Angular2TokenService, ResetPasswordData } from 'angular2-token';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,12 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _tokenService: Angular2TokenService) { }
 
-  private _forgotPassword: ForgotPasswordData = <ForgotPasswordData>{};
+  private _forgotPassword: ResetPasswordData  = <ResetPasswordData>{};
   private _output: any;
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+
+    this._output = null;
+
+    this._tokenService.resetPassword({
+          email: this._forgotPassword.email,
+      }).subscribe(
+          res =>      console.log(res),
+          error =>    console.log(error)
+    );
+
   }
 
 }
